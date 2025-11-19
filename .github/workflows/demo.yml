@@ -23,16 +23,16 @@ jobs:
       # Build image
       - name: Build Docker image
         run: |
-          docker build -t sndass/cicd-demo:latest .
+          docker build -t ziegen28/cicd-demo:latest .
 
       # Push image
       - name: Push Docker image
         run: |
-          docker push sndass/cicd-demo:latest
+          docker push ziegen28/cicd-demo:latest
 
       # Echo deployment instructions
       - name: Deployment notes
         run: |
           echo "To deploy locally, run:"
-          echo "docker pull sndass/cicd-demo:latest"
-          echo "docker run -d -p 8080:80 sndass/cicd-demo:latest"
+          echo "docker pull ziegen28/cicd-demo:latest"
+          echo "docker run -d -p 8080:80 ziegen28/cicd-demo:latest"
