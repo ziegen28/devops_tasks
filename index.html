@@ -1,252 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ziegen Balg Benjamin J | AI & Data Science Engineer v1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Challenge</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        background: #0b0f19;
+        font-family: "Segoe UI", sans-serif;
+        color: #e9eefc;
+        overflow: hidden;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
-            line-height: 1.7;
-        }
+    /* Animated glowing background gradients */
+    .bg-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.35;
+        animation: drift 18s infinite alternate ease-in-out;
+        z-index: -10;
+    }
 
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
+    .blue { background: #3a7bd5; top: -10%; left: -10%; }
+    .teal { background: #2bd9d9; top: 40%; left: 70%; animation-duration: 22s; }
+    .green { background: #15ff99; top: 70%; left: 20%; animation-duration: 26s; }
+    .orange { background: #ff8f3c; top: 10%; left: 60%; animation-duration: 20s; }
 
-        .container {
-            width: 85%;
-            max-width: 950px;
-            margin: auto;
-            padding: 40px 0;
-        }
+    @keyframes drift {
+        from { transform: translateY(0px) translateX(0px); }
+        to { transform: translateY(80px) translateX(40px); }
+    }
 
-        h1, h2, h3 {
-            color: #fff;
-        }
+    /* Kubernetes hexagon icons floating */
+    .kube-hex {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: rgba(0,140,255,0.15);
+        border: 2px solid rgba(0,150,255,0.35);
+        clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+        animation: floatHex 12s infinite ease-in-out;
+        filter: blur(1px);
+    }
 
-        section {
-            margin: 50px 0;
-        }
+    @keyframes floatHex {
+        0% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+        50% { transform: translateY(-40px) rotate(20deg); opacity: 0.8; }
+        100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+    }
 
-        .center {
-            text-align: center;
-        }
+    .hex1 { top: 20%; left: 10%; }
+    .hex2 { top: 60%; left: 80%; animation-delay: -2s; }
+    .hex3 { top: 75%; left: 35%; animation-delay: -4s; }
 
-        .skills-grid,
-        .icons-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+    /* Title */
+    #title {
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-top: 60px;
+        letter-spacing: 4px;
+        background: linear-gradient(to right, #00d2ff, #3a7bd5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+    }
 
-        .badge {
-            background: #161b22;
-            padding: 8px 16px;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-        }
+    /* Container for statements */
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 80px;
+    }
 
-        .project {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #30363d;
-        }
+    .card {
+        width: 40%;
+        background: rgba(255,255,255,0.04);
+        padding: 35px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 0 40px rgba(0,150,255,0.25);
+        transition: 0.3s ease;
+    }
 
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            opacity: 0.7;
-        }
-    </style>
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 50px rgba(0,200,255,0.5);
+    }
+
+    .label {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #00c3ff;
+        margin-bottom: 12px;
+    }
+
+    .text {
+        font-size: 1.4rem;
+        opacity: 0.9;
+    }
+</style>
+
 </head>
-
 <body>
 
-    <div class="container">
+<!-- Glowing animated background blobs -->
+<div class="bg-glow blue"></div>
+<div class="bg-glow teal"></div>
+<div class="bg-glow green"></div>
+<div class="bg-glow orange"></div>
 
-        <!-- Header -->
-        <section class="center">
+<!-- Floating Kubernetes hexagons -->
+<div class="kube-hex hex1"></div>
+<div class="kube-hex hex2"></div>
+<div class="kube-hex hex3"></div>
 
-            <h1>Hi there! 👋 I'm <b>Ziegen Balg Benjamin J</b></h1>
-            <h3>AI & Data Science Engineer • AI/ML Developer • Knowledge Graph & RAG Engineer</h3>
+<!-- Title -->
+<div id="title">DevOps Challenge</div>
 
-            <p>
-                <a href="mailto:ziegenbalgbenjamin2004@gmail.com">Email</a> •
-                <a href="https://linkedin.com/in/ziegen">LinkedIn</a> •
-                <a href="tel:8925494954">Phone</a>
-            </p>
-        </section>
-
-        <hr>
-
-        <!-- Summary -->
-        <section>
-            <h2>🧠 Executive Summary</h2>
-            <p>
-                B.Tech graduate in <b>Artificial Intelligence and Data Science</b> with hands-on experience in
-                <b>AI/ML, Deep Learning, Generative AI, LangChain, Neo4j, FastAPI, and RAG systems</b>.
-                Skilled in building scalable AI pipelines, knowledge graphs, and LLM-based applications.
-                Strong in Python, SQL, analytics, and end-to-end AI system development.
-            </p>
-        </section>
-
-        <!-- Experience -->
-        <section>
-            <h2>💼 Experience</h2>
-
-            <h3>HTC Global Services — Data & AI Intern</h3>
-            <p><i>April 2025 – July 2025</i></p>
-            <ul>
-                <li>Developed complete <b>RAG pipelines</b> using LangChain & OpenAI, integrated with LangSmith</li>
-                <li>Built <b>Neo4j knowledge graphs</b> from relational data using Runway + OpenAI Discovery</li>
-                <li>Developed <b>3 FastAPI endpoints</b> for document upload, LLM querying & metrics</li>
-                <li>Integrated <b>Langfuse</b> for end-to-end QA workflow observability</li>
-                <li>Created <b>Graph-based Q&A pipelines</b> using LangGraph</li>
-            </ul>
-        </section>
-
-        <!-- Skills -->
-        <section>
-            <h2>🛠️ Skills</h2>
-
-            <h3>Programming</h3>
-            <div class="skills-grid">
-                <span class="badge">Python</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-            </div>
-
-            <h3>Databases</h3>
-            <div class="skills-grid">
-                <span class="badge">Oracle</span>
-                <span class="badge">Neo4j</span>
-                <span class="badge">MySQL</span>
-                <span class="badge">Vector DBs</span>
-            </div>
-
-            <h3>Tools</h3>
-            <div class="skills-grid">
-                <span class="badge">Git</span>
-                <span class="badge">GitHub</span>
-                <span class="badge">VS Code</span>
-                <span class="badge">Tableau</span>
-                <span class="badge">Power BI</span>
-                <span class="badge">Excel</span>
-                <span class="badge">Cursor AI</span>
-            </div>
-
-            <h3>Frameworks & Libraries</h3>
-            <div class="skills-grid">
-                <span class="badge">Pandas</span>
-                <span class="badge">NumPy</span>
-                <span class="badge">Scikit-learn</span>
-                <span class="badge">OpenCV</span>
-                <span class="badge">LangChain</span>
-                <span class="badge">LangSmith</span>
-                <span class="badge">Langfuse</span>
-            </div>
-
-            <h3>API & Agents</h3>
-            <div class="skills-grid">
-                <span class="badge">FastAPI</span>
-                <span class="badge">MCP</span>
-            </div>
-
-            <h3>Concepts</h3>
-            <div class="skills-grid">
-                <span class="badge">EDA</span>
-                <span class="badge">Machine Learning</span>
-                <span class="badge">Deep Learning</span>
-                <span class="badge">Generative AI</span>
-                <span class="badge">Data Science</span>
-                <span class="badge">Analytics</span>
-            </div>
-        </section>
-
-        <!-- Tools Icons -->
-        <section>
-            <h2>🔧 Languages & Tools</h2>
-            <p>(Icons removed as requested — plain HTML only)</p>
-        </section>
-
-        <!-- Projects -->
-        <section>
-            <h2>🚀 Featured Projects</h2>
-
-            <div class="project">
-                <h3>🔹 Secure Visage – Real-Time Crime Prediction</h3>
-                <p>Built a real-time facial recognition + criminal detection system using <b>ResNet</b>, TensorFlow, Haar Cascade, and webcam streaming.</p>
-            </div>
-
-            <div class="project">
-                <h3>🔹 Unified AI Agent Platform (RAG + FastAPI + Langfuse)</h3>
-                <p>Developed an end-to-end RAG pipeline with FastAPI, improving response speed by 40% and adding Langfuse observability.</p>
-            </div>
-
-            <div class="project">
-                <h3>🔹 LLM Knowledge Graph Chatbot (Neo4j + LangGraph)</h3>
-                <p>Built Neo4j knowledge graph from CSVs and implemented an LLL-powered Text-to-Cypher chatbot.</p>
-            </div>
-
-            <div class="project">
-                <h3>🔹 Disease Prediction Model</h3>
-                <p>Machine Learning model predicting diseases using Scikit-learn and Pandas for early diagnosis support.</p>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section>
-            <h2>🎓 Education</h2>
-            <ul>
-                <li><b>B.Tech – Artificial Intelligence & Data Science</b>, Jeppiaar Engineering College — CGPA: 8.5 (2021–2025)</li>
-                <li><b>Higher Secondary (12th)</b>, St. Joseph Academy — 89%</li>
-                <li><b>10th Standard</b>, John Britto Matriculation — 86%</li>
-            </ul>
-        </section>
-
-        <!-- Certifications -->
-        <section>
-            <h2>📜 Certifications</h2>
-            <ul>
-                <li>Google Data Analytics – Coursera</li>
-                <li>Python Certification – Imarticus</li>
-                <li>Generative AI Fundamentals – Databricks</li>
-                <li>Deep Learning – Udemy</li>
-            </ul>
-        </section>
-
-        <!-- GitHub Analytics -->
-        <section>
-            <h2>📊 GitHub Analytics</h2>
-            <p>Replace YOUR_GITHUB_USERNAME in the URLs below:</p>
-            <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=tokyonight">
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=tokyonight">
-        </section>
-
-        <!-- Contact -->
-        <section>
-            <h2>📫 Contact</h2>
-            <p>Email: <b>ziegenbalgbenjamin2004@gmail.com</b></p>
-            <p>Phone: <b>8925494954</b></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/ziegen">linkedin.com/in/ziegen</a></p>
-        </section>
-
+<!-- Two statement cards -->
+<div class="wrapper">
+    <div class="card">
+        <div class="label">Statement A</div>
+        <div class="text" id="statementA">DevOps reduces manual interventions using automation.</div>
     </div>
 
-    <footer>© 2025 Ziegen Balg Benjamin J — Portfolio</footer>
+    <div class="card">
+        <div class="label">Statement B</div>
+        <div class="text" id="statementB">DevOps increases manual interventions to avoid automation issues.</div>
+    </div>
+</div>
 
 </body>
-
 </html>
